@@ -1,0 +1,57 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="index" appConnect="local" components="{dmxBootstrap5TableGenerator:{},dmxDataTraversal:{},dmxBootstrap5Modal:{}}" -->
+
+<dmx-serverconnect id="API" url="/api/Read"></dmx-serverconnect>
+<div class="container w-auto">
+
+    <div class="row">
+
+        <div class="mt-5 col-12">
+            <div class="table-responsive text-center">
+                <table class="table table-striped table-hover table-sm table-dark">
+                    <thead>
+                        <tr>
+                            <th class="text-warning">User</th>
+                            <th class="text-warning">Username</th>
+                            <th class="text-warning">Email</th>
+                            <th class="text-warning">Created at</th>
+                            <th class="text-warning">Tel</th>
+                            <th class="text-warning">Supprime</th>
+                            <th class="text-warning">Libelle role</th>
+                        </tr>
+                    </thead>
+                    <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="API.data.CreateApi.data" id="tableRepeat1">
+                        <tr>
+                            <td dmx-text="user_Id" class="text-warning fw-bold"></td>
+                            <td dmx-text="username"></td>
+                            <td dmx-text="email"></td>
+                            <td dmx-text="created_At"></td>
+                            <td dmx-text="tel"></td>
+                            <td dmx-text="supprime"></td>
+                            <td dmx-text="libelle_role"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="modal1" is="dmx-bs5-modal" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">add</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<meta name="ac:route" content="/">
